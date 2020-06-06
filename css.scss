@@ -1,0 +1,94 @@
+$maxWidth: 1650;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+//************ BODY ****************************************************
+body{
+	max-width: 1650px;
+	margin: 0 auto; 
+	padding: 0;
+		div.wrapper{
+			margin: 0 5px;
+		}
+}
+//************ HEADER ****************************************************
+header{
+	background-image: url("img/leaf1650.jpg");
+	background-position: 0 0;
+	background-origin: padding-box;
+		h1{
+			color: #fff;
+			text-shadow: 2px 2px 5px #fff;
+			@include adaptiv-font(42, 28); 
+			letter-spacing: 0.5em;
+			text-align: center;
+			font-family: 'Metal Mania', Georgia, 'Times New Roman', Times, serif;
+		}
+		h2{
+			@include adaptiv-font(30, 18); 
+			letter-spacing: 0.1em;
+			text-align: center;
+			color: #E1E1E1;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+	}
+.menu>ul{
+	display: flex;
+	background-color: rgba(255,255,255,0.09);
+}
+
+//************ MAIN ******************************************************
+p{
+	@include adaptiv-font(20, 14);
+}
+//************ FOOTER ****************************************************
+
+//************* MEDIA ****************************************************
+
+/////////////////////////
+@media (min-width: 480px){
+	header{
+		max-height: 166px;
+		background-image: url("img/leaf800.jpg");
+	}
+}
+/////////////////////////
+@media (min-width: 800px){
+	header{
+		max-height: 213px;
+		background-image: url("img/leaf1024.jpg");
+	}
+}
+/////////////////////////
+@media (min-width: 1024px){
+	header{
+		max-height: 250px;
+		background-image: url("img/leaf1200.jpg");
+	}
+}
+/////////////////////////
+@media (min-width: 1200px){
+	header{
+		max-height: 344px;
+		background-image: url("img/leaf1650.jpg");
+		h1{
+			font-size: 42px;
+			color: #000;
+		}
+		h2{
+			font-size: 30px;
+	}
+}
+	p{
+		font-size: 20px;
+		}
+	}
+
+
+
+
+
+
+
