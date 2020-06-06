@@ -9,7 +9,7 @@ body {
   body div.wrapper footer {
     padding: 0 10px; }
   body div.wrapper main {
-    padding: 0 10px; }
+    padding: 10px 10px 20px 10px; }
 
 header {
   background-image: url("img/leaf1650.jpg");
@@ -44,6 +44,8 @@ header {
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: rgba(255, 255, 255, 0.3); }
+  .menu > ul li {
+    border-right: 1px solid #fff; }
 
 .menu > ul li a {
   -webkit-box-sizing: border-box;
@@ -71,8 +73,56 @@ header {
 .menu ul li:hover {
   background-color: #296419; }
 
-p {
-  font-size: calc(14px + 6 * ((100vw - 320px) / 1330)); }
+.menu > ul li ul li {
+  background-color: rgba(150, 230, 138, 0.85);
+  border-bottom: 1px solid #fff;
+  text-shadow: 2px 2px 6px #FFFFFF; }
+
+.menu > ul li ul li:hover {
+  background-color: #aafa14; }
+
+.menu > ul li ul li:last-child {
+  border-bottom: none; }
+
+.menu li ul {
+  min-width: 130px;
+  position: absolute;
+  display: none; }
+
+.menu li {
+  position: relative; }
+
+.menu > ul li:hover > ul {
+  display: block;
+  position: absolute; }
+
+.menu > ul li ul li ul {
+  position: absolute;
+  top: 0;
+  right: -131px;
+  border-left: 1px solid #fff;
+  z-index: 4; }
+
+.menu > ul li ul li ul li {
+  background-color: rgba(190, 250, 110, 0.85); }
+
+.menu > ul li ul li ul li ul {
+  right: 130px;
+  z-index: 5; }
+
+.menu > ul li ul li ul li ul li {
+  background-color: rgba(220, 250, 0, 0.85); }
+
+main p {
+  padding-bottom: 7px;
+  font-size: calc(14px + 6 * ((100vw - 320px) / 1330));
+  text-indent: 20px; }
+
+main > p:first-letter {
+  font-size: 1.2em;
+  color: #188812;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px #030303; }
 
 @media (min-width: 480px) {
   header {
