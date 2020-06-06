@@ -1,16 +1,22 @@
+body * {
+  margin: 0;
+  padding: 0; }
+
 body {
   max-width: 1650px;
   margin: 0 auto;
   padding: 0; }
-  body div.wrapper {
-    margin: 0 5px; }
+  body div.wrapper footer {
+    padding: 0 10px; }
+  body div.wrapper main {
+    padding: 0 10px; }
 
 header {
   background-image: url("img/leaf1650.jpg");
   background-position: 0 0;
   background-origin: padding-box; }
   header h1 {
-    color: #fff;
+    color: #000;
     text-shadow: 2px 2px 5px #fff;
     font-size: calc(28px + 14 * ((100vw - 320px) / 1330));
     letter-spacing: 0.5em;
@@ -20,14 +26,50 @@ header {
     font-size: calc(18px + 12 * ((100vw - 320px) / 1330));
     letter-spacing: 0.1em;
     text-align: center;
-    color: #E1E1E1;
+    color: #000;
+    text-shadow: 2px 2px 5px #fff;
     font-family: Georgia, 'Times New Roman', Times, serif; }
+
+.menu ul, .menu ol {
+  list-style: none;
+  padding: 0; }
 
 .menu > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.09); }
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.menu > ul li a {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+  display: block;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 5px 15px 5px 15px;
+  min-width: 70px; }
+
+.menu > ul li a:hover {
+  color: #fff;
+  text-shadow: 2px 2px 6px #FFFFFF;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.menu ul li:hover {
+  background-color: #296419; }
 
 p {
   font-size: calc(14px + 6 * ((100vw - 320px) / 1330)); }
@@ -52,8 +94,7 @@ p {
     max-height: 344px;
     background-image: url("img/leaf1650.jpg"); }
     header h1 {
-      font-size: 42px;
-      color: #000; }
+      font-size: 42px; }
     header h2 {
       font-size: 30px; }
   p {

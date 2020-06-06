@@ -4,13 +4,22 @@ $maxWidth: 1650;
  $maxWidth: $maxWidth - 320;
  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
+body *{
+	margin: 0;
+	padding: 0;
+}
 //************ BODY ****************************************************
 body{
 	max-width: 1650px;
 	margin: 0 auto; 
 	padding: 0;
 		div.wrapper{
-			margin: 0 5px;
+			footer{
+				padding: 0 10px;
+			}
+			main{
+				padding: 0 10px;
+			}
 		}
 }
 //************ HEADER ****************************************************
@@ -19,7 +28,7 @@ header{
 	background-position: 0 0;
 	background-origin: padding-box;
 		h1{
-			color: #fff;
+			color: #000;
 			text-shadow: 2px 2px 5px #fff;
 			@include adaptiv-font(42, 28); 
 			letter-spacing: 0.5em;
@@ -30,13 +39,41 @@ header{
 			@include adaptiv-font(30, 18); 
 			letter-spacing: 0.1em;
 			text-align: center;
-			color: #E1E1E1;
+			color: #000;
+			text-shadow: 2px 2px 5px #fff;
 			font-family: Georgia, 'Times New Roman', Times, serif;
 		}
 	}
+.menu ul,.menu ol{
+	list-style: none;
+	padding: 0;
+}
 .menu>ul{
 	display: flex;
-	background-color: rgba(255,255,255,0.09);
+	flex-wrap:no-wrap;
+	justify-content: flex-start;
+	background-color: rgba(255,255,255,0.3);
+}
+.menu>ul li a{
+	box-sizing:border-box;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+	display: block;
+	transition: all 0.4s ease;
+	padding: 5px 15px 5px 15px;
+	min-width: 70px;
+}
+.menu>ul li a:hover{
+	color: #fff;
+	text-shadow: 2px 2px 6px #FFFFFF;
+	transition: all 0.3s ease;
+}
+.menu ul li:hover{
+	background-color: #296419;
 }
 
 //************ MAIN ******************************************************
@@ -75,7 +112,6 @@ p{
 		background-image: url("img/leaf1650.jpg");
 		h1{
 			font-size: 42px;
-			color: #000;
 		}
 		h2{
 			font-size: 30px;
