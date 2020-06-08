@@ -1,21 +1,27 @@
+
+
+
 $maxWidth: 1650;
 @mixin adaptiv-font($pcSize, $mobSize) {
  $addSize: $pcSize - $mobSize;
  $maxWidth: $maxWidth - 320;
- font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 640px) / #{$maxWidth}));
 }
 body *{
 	margin: 0;
 	padding: 0;
+	max-width: 1650px;
 }
 //************ BODY ****************************************************
 body{
+	min-width: 480px;
 	max-width: 1650px;
 	margin: 0 auto; 
 	padding: 0;
 		div.wrapper{
 			footer{
-				padding: 0 10px;
+				padding: 0 0px;
+
 			}
 			main{
 				padding: 10px 10px 20px 15px;
@@ -24,6 +30,7 @@ body{
 }
 //************ HEADER ****************************************************
 header{
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -37,15 +44,15 @@ header{
 		h1{
 			color: #000;
 			text-shadow: 2px 2px 5px #fff;
-			font-size: 30px;
+			font-size: 22px;
 			letter-spacing: 0.5em;
-			text-align: center;
+			margin-left: 10%;
 			font-family: 'Metal Mania', Georgia, 'Times New Roman', Times, serif;
 		}
 		h2{
-			font-size: 20px;
+			font-size: 18px;
 			letter-spacing: 0.1em;
-			text-align: center;
+			margin-left: 15%;
 			color: #000;
 			text-shadow: 2px 2px 5px #fff;
 			font-family: Georgia, 'Times New Roman', Times, serif;
@@ -56,16 +63,17 @@ header{
 	padding: 0;
 }
 .menu>ul{
+
 	display: flex;
 	flex-wrap:no-wrap;
 	justify-content: flex-start;
 	background-color: rgba(255,255,255,0.3);
 		li{
-			border-right: 2px solid #fff;
+			border-right: 2px solid  rgba(255,255,255,0.6);
 		}
 }
 .menu>ul>li:first-child{
-	border-left: 15px solid #fff;
+	border-left: 15px solid  rgba(255,255,255,0.3);
 }
 .menu>ul li a{
 	box-sizing:border-box;
@@ -132,6 +140,10 @@ header{
 
 //************ MAIN ******************************************************
 main{
+		img{
+			max-width: 100%;
+			height: auto;
+		}
 		background-image: url("img/wallpapers-textures.jpg");
 		p{
 			padding-bottom: 7px;
@@ -144,6 +156,7 @@ main{
 div.opt{
 
 	margin-top: 7em;
+	margin-bottom: 2.9em;
 	background-color: rgba(255,255,255,0.5);
 	padding: 12px;
 }
@@ -153,59 +166,134 @@ main>div>p:first-letter{
 	font-weight: bolder;
 	text-shadow: 1px 1px 3px #000000;
 }
+img.btw_text_l{
+	width: 140px;
+	float: left;
+	margin: 10px 10px 10px 20px;
+	border: 1px dashed #3AC827;
+}
+img.btw_text{
+	width: 140px;
+	float: right;
+	margin: 10px 20px 10px 10px;
+	border: 1px dashed #3AC827;
+}
+img.mainimg{
+	padding: 2px;
+	background-color: #fff;
+}
 
 
 //************ FOOTER ****************************************************
-
-
+footer{
+	margin: 0;
+	padding: 0;
+}
+footer{
+	background-image: url("img/leaf480.jpg");	
+	background-repeat: repeat-x;
+	max-width: 1650px;
+	margin: 0 auto;
+	width: 100%;
+	height: 55px;
+	position: fixed;
+	bottom: 0px;
+}
+div.footerlist{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+.footerlist>ul{
+	display: flex;
+	padding-top: 10px;
+}
+.footerlist>ul li{
+	border-right: 1px solid #fff;
+	list-style: none;
+}
+.footerlist>ul li:first-child{
+	border-left: 1px solid #fff;
+}
+.footerlist>ul li a{
+	padding: 5px 20px 5px 20px;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+}
+.year p{
+	color: #fff;
+	font-size: 0.6em;
+}
+div.year{
+	width: 100%;
+	background-color: rgba(255,255,255,0.3);
+	text-align: center;
+}
 
 //************* MEDIA ****************************************************
+ @media all and(min-width: 800px){
+	header{
+		h1{
+		font-size: 26px;
+	}
+		h2{
+			font-size: 18px;
+		}
+	}
+	.footerlist>ul li a{
+		font-size: 14px;
+		padding: 5px 40px 5px 40px;
 
-/////////////////////////
-/* @media (min-width: 480px){
+	}
+	}
+
+@media all and(min-width: 1200px){
 	header{
-		background-image: url("img/leaf800.jpg");
+		h1{
+		font-size: 28px;
 	}
-}
-/////////////////////////
-@media (min-width: 800px){
+		h2{
+			font-size: 20px;
+		}
+	}
+	.footerlist>ul li a{
+		font-size: 14px;
+		padding: 5px 40px 5px 40px;
+	}
+	}
+
+@media all and(min-width: 1400px){
 	header{
-		div.menu>ul{
-			margin-top: 24px;
-		}
-		background-image: url("img/leaf1024.jpg");
+		h1{
+		font-size: 32px;
 	}
-}
-/////////////////////////
-@media (min-width: 1024px){
-	header{
-		div.menu>ul{
-			margin-top: 24px;
-		}
-		background-image: url("img/leaf1200.jpg");
-	}
-} */
-/////////////////////////
-@media (min-width: 1200px){
-	p{
-		font-size: 20px;
+		h2{
+			font-size: 22px;
 		}
 	}
-@media (min-width: 1667px){
-	p{
-		font-size: 20px;
-		}
-	.menu>ul>li:first-child{
-	border-left: 15px solid #000;
-}
-	.menu>ul{
+	.footerlist>ul li a{
+		font-size: 14px;
+		padding: 5px 40px 5px 40px;
+	}
+	}
+@media all and (min-width: 1650px){
+	body{
+		background-color: #000;
+	}
+		.menu>ul{
 		li{
 			border-right: 2px solid #000;
 		}
 }
-	}
-
-
+	.menu>ul>li:first-child{
+	border-left: 15px solid #000;
+}
+}
 
 
 
