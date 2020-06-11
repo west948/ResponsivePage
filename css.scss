@@ -1,10 +1,9 @@
 
-
-$maxWidth: 1650;
+$maxWidth: 1400;
 @mixin adaptiv-font($pcSize, $mobSize) {
  $addSize: $pcSize - $mobSize;
- $maxWidth: $maxWidth - 320;
- font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 640px) / #{$maxWidth}));
+ $maxWidth: $maxWidth - 480;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 480px) / #{$maxWidth}));
 }
 body *{
 	margin: 0;
@@ -30,7 +29,7 @@ body{
 }
 //************ HEADER ****************************************************
 header{
-
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -63,7 +62,6 @@ header{
 	padding: 0;
 }
 .menu>ul{
-
 	display: flex;
 	flex-wrap:no-wrap;
 	justify-content: flex-start;
@@ -73,6 +71,12 @@ header{
 			width: 90px;
 			border-right: 2px solid  rgba(255,255,255,0.6);
 		}
+}
+.menu>ul a img.cart{
+	position: absolute;
+	right: 18px;
+	top: 65px;
+	width: 40px;
 }
 .menu>ul>li:first-child{
 	border-left: 15px solid  rgba(255,255,255,0.3);
@@ -95,9 +99,9 @@ header{
 	min-width: 70px;
 }
 .menu>ul li a:hover{
-	color: #fff;
-	text-shadow: 2px 2px 6px #FFFFFF;
-	transition: all 0.3s ease;
+	
+	
+	transition: all 0.2s ease;
 }
 .menu ul li:hover{
 	transition: all 0.3s ease;
@@ -110,7 +114,8 @@ header{
 	text-shadow: 2px 2px 6px #FFFFFF;
 }
 .menu>ul li ul li:hover{
-	background-color: rgba(170,250,20, 1);
+	background-color: rgba(150,150,10, 1);
+	cursor: pointer;
 }
 .menu>ul li ul li:last-child{
 	border-bottom: none;
@@ -136,14 +141,17 @@ header{
 }
 .menu>ul li ul li ul li{
 	background-color: rgba(190,250,110, 0.85);
+	z-index: 3;
 }
+
 .menu>ul li ul li ul li ul{
 	right: 52px;
 	z-index: 5;
 }
 .menu>ul li ul li ul li ul li{
-	background-color: rgba(220,250,0, 0.85);
+	background-color: rgba(220,250,0, 1);
 }
+
 
 //************ MAIN ******************************************************
 main{ 
@@ -175,7 +183,7 @@ main{
 		 }
 }
 div.opt{
-
+position: relative;
 	margin-top: 7em;
 	margin-bottom: 2.9em;
 	background-color: rgba(255,255,255,0.5);
@@ -257,6 +265,7 @@ div.footerlist{
 .year p{
 	color: #fff;
 	font-size: 0.6em;
+	letter-spacing: 0.1em;
 }
 div.year{
 	width: 100%;
@@ -274,6 +283,11 @@ div.year{
 			font-size: 18px;
 		}
 	}
+	.menu>ul a img.cart{
+	right: 18px;
+	top: 60px;
+	width: 45px;
+}
 	.footerlist>ul li a{
 		font-size: 12px;
 		padding: 5px 20px 5px 20px;
@@ -296,6 +310,11 @@ div.year{
 			font-size: 20px;
 		}
 	}
+		.menu>ul a img.cart{
+	right: 18px;
+	top: 55px;
+	width: 50px;
+}
 		.footerlist>ul li a{
 		font-size: 12px;
 		padding: 5px 20px 5px 20px;
@@ -310,6 +329,34 @@ div.year{
 	}
 
 @media all and(min-width: 1400px){
+	main{ 
+		p{
+		font-size: 19px;
+	}
+	blockquote{
+				font-size: 20px;
+	}
+	ul li{
+		font-size: 20px;
+	}
+
+}
+.menu>ul a img.cart{
+	position: absolute;
+	right: 18px;
+	top: 45px;
+	width: 64px;
+}
+div.footerlist{
+	ul li a{
+		font-size: 14px;
+	}
+}
+div.year{
+	p{
+		letter-spacing: 0.2em;
+	}
+}
 	header{
 		h1{
 		font-size: 32px;
@@ -331,6 +378,44 @@ div.year{
 	}
 }
 
-
+.hid{
+	display: none;
+}
+ .show{
+ 	
+ 	width: 420px; 
+ 	height: 200px;
+	display: block;
+	p{
+		@include adaptiv-font(14, 12);
+		padding-top: 30px;
+		letter-spacing: 0.1em;
+		text-shadow: 0 0 8px #000;
+	}
+	p:first-letter{
+		@include adaptiv-font(18, 14);
+	}
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background-color: #D9FFE2;
+	border: 3px solid green;
+	text-align: center;
+} 
+div.part{
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border: 1px solid green;
+	text-align: center;
+	font-weight: bolder;
+	@include adaptiv-font(15, 12);
+	position: absolute;
+	right: -10px;
+	top: -10px;
+}
+div.part:hover{
+	cursor: pointer;
+}
 
 
